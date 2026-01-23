@@ -1,0 +1,76 @@
+{
+  "actions": [],
+  "allow_copy": 0,
+  "allow_import": 1,
+  "autoname": "format:{price_date}-{metal}-{purity}",
+  "creation": "2024-01-01 00:00:00.000000",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "price_date",
+    "metal",
+    "purity",
+    "price_usd",
+    "price_local",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "price_date",
+      "fieldtype": "Date",
+      "label": "Price Date",
+      "reqd": 1
+    },
+    {
+      "fieldname": "metal",
+      "fieldtype": "Select",
+      "label": "Metal",
+      "options": "Gold\nSilver\nPlatinum\nPalladium",
+      "reqd": 1
+    },
+    {
+      "fieldname": "purity",
+      "fieldtype": "Data",
+      "label": "Purity",
+      "description": "Example: 24K, 21K, 18K",
+      "reqd": 1
+    },
+    {
+      "fieldname": "price_usd",
+      "fieldtype": "Currency",
+      "label": "Price (USD)",
+      "reqd": 1
+    },
+    {
+      "fieldname": "price_local",
+      "fieldtype": "Currency",
+      "label": "Price (Local)",
+      "description": "Local currency price per gram"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    }
+  ],
+  "is_submittable": 0,
+  "module": "Benhussein",
+  "name": "Daily Metal Prices",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "read": 1,
+      "role": "System Manager",
+      "write": 1
+    },
+    {
+      "read": 1,
+      "role": "Accounts User"
+    }
+  ],
+  "sort_field": "price_date",
+  "sort_order": "DESC",
+  "title_field": "metal"
+}

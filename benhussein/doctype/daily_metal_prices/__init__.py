@@ -1,0 +1,1 @@
+"""Daily Metal Prices DocType."""

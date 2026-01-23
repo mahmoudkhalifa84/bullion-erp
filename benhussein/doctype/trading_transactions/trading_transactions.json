@@ -1,0 +1,93 @@
+{
+  "actions": [],
+  "allow_copy": 1,
+  "allow_import": 1,
+  "autoname": "format:TRX-{####}",
+  "creation": "2024-01-01 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "transaction_date",
+    "transaction_type",
+    "metal",
+    "purity",
+    "quantity",
+    "price_usd",
+    "price_local",
+    "reference_document",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "transaction_date",
+      "fieldtype": "Date",
+      "label": "Transaction Date",
+      "reqd": 1
+    },
+    {
+      "fieldname": "transaction_type",
+      "fieldtype": "Select",
+      "label": "Type",
+      "options": "Buy\nSell",
+      "reqd": 1
+    },
+    {
+      "fieldname": "metal",
+      "fieldtype": "Select",
+      "label": "Metal",
+      "options": "Gold\nSilver\nPlatinum\nPalladium",
+      "reqd": 1
+    },
+    {
+      "fieldname": "purity",
+      "fieldtype": "Data",
+      "label": "Purity",
+      "reqd": 1
+    },
+    {
+      "fieldname": "quantity",
+      "fieldtype": "Float",
+      "label": "Quantity (grams)",
+      "reqd": 1
+    },
+    {
+      "fieldname": "price_usd",
+      "fieldtype": "Currency",
+      "label": "Price (USD)",
+      "reqd": 1
+    },
+    {
+      "fieldname": "price_local",
+      "fieldtype": "Currency",
+      "label": "Price (Local)"
+    },
+    {
+      "fieldname": "reference_document",
+      "fieldtype": "Data",
+      "label": "Reference Document",
+      "description": "Optional link to external deal reference"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    }
+  ],
+  "is_submittable": 0,
+  "module": "Benhussein",
+  "name": "Trading Transactions",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "read": 1,
+      "role": "System Manager",
+      "write": 1
+    },
+    {
+      "read": 1,
+      "role": "Accounts User"
+    }
+  ],
+  "title_field": "transaction_type"
+}

@@ -1,0 +1,76 @@
+{
+  "actions": [],
+  "allow_copy": 1,
+  "allow_import": 1,
+  "autoname": "field:simulation_name",
+  "creation": "2024-01-01 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "simulation_name",
+    "metal",
+    "start_date",
+    "end_date",
+    "initial_capital",
+    "target_margin",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "simulation_name",
+      "fieldtype": "Data",
+      "label": "Simulation Name",
+      "reqd": 1
+    },
+    {
+      "fieldname": "metal",
+      "fieldtype": "Select",
+      "label": "Metal",
+      "options": "Gold\nSilver\nPlatinum\nPalladium",
+      "reqd": 1
+    },
+    {
+      "fieldname": "start_date",
+      "fieldtype": "Date",
+      "label": "Start Date",
+      "reqd": 1
+    },
+    {
+      "fieldname": "end_date",
+      "fieldtype": "Date",
+      "label": "End Date"
+    },
+    {
+      "fieldname": "initial_capital",
+      "fieldtype": "Currency",
+      "label": "Initial Capital"
+    },
+    {
+      "fieldname": "target_margin",
+      "fieldtype": "Percent",
+      "label": "Target Margin (%)"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    }
+  ],
+  "is_submittable": 0,
+  "module": "Benhussein",
+  "name": "Trading Simulation",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "read": 1,
+      "role": "System Manager",
+      "write": 1
+    },
+    {
+      "read": 1,
+      "role": "Accounts User"
+    }
+  ],
+  "title_field": "simulation_name"
+}
