@@ -1,7 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+.env
+venv/
+
+# Frappe / Bench
+sites/*
+!.gitkeep
+logs/
+node_modules/
+.env
+*.log
+
+# OS
 .DS_Store
-*.pyc
-*.egg-info
-*.swp
-tags
-node_modules
-__pycache__
+Thumbs.db
