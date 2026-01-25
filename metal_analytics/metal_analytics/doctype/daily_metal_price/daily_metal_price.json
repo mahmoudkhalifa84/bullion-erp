@@ -1,0 +1,100 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-24 21:39:16.652969",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "metal_type",
+  "source",
+  "item",
+  "purity_or_karat",
+  "global_price",
+  "local_price",
+  "is_analytic",
+  "item_group"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "metal_type",
+   "fieldtype": "Select",
+   "label": "Metal Type",
+   "options": "Gold\nSilver"
+  },
+  {
+   "fieldname": "source",
+   "fieldtype": "Link",
+   "label": "Source",
+   "options": "Metal Price Source"
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "label": "Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "purity_or_karat",
+   "fieldtype": "Float",
+   "label": "Purity or karat"
+  },
+  {
+   "fieldname": "global_price",
+   "fieldtype": "Float",
+   "label": "Global Price"
+  },
+  {
+   "fieldname": "local_price",
+   "fieldtype": "Float",
+   "label": "Local Price"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_analytic",
+   "fieldtype": "Check",
+   "label": "Is Analytic"
+  },
+  {
+   "fieldname": "item_group",
+   "fieldtype": "Link",
+   "label": "Item Group",
+   "options": "Item Group",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-24 23:00:57.356952",
+ "modified_by": "Administrator",
+ "module": "metal analytics",
+ "name": "Daily Metal Price",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
