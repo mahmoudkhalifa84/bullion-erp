@@ -5,6 +5,13 @@ app_description = "metal analytics"
 app_email = "behussein@info.com"
 app_license = "mit"
 
+bench_commands = [
+    {
+        "name": "setup-market",
+        "handler": "metal_analytics.commands.setup_market.run"
+    }
+]
+
 # Apps
 # ------------------
 

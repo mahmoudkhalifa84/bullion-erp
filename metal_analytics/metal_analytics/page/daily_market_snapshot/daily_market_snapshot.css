@@ -1,0 +1,75 @@
+.market-table {
+    border-collapse: collapse;
+    background: #fff;
+}
+
+.market-table thead th {
+    background: #3b3f45;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.market-table td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 8px;
+}
+
+.market-table tr {
+    border-bottom: 1px solid #eee;
+}
+
+.market-table .price {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.market-table .diff {
+    font-size: 12px;
+}
+
+.market-table .diff.green {
+    color: #2ecc71;
+}
+
+.market-table .diff.red {
+    color: #e74c3c;
+}
+
+.market-table .actions button {
+    margin: 2px;
+}
+
+.market-table .date {
+    white-space: nowrap;
+}
+
+.market-table th {
+    background: #2f353b;
+    color: #fff;
+    text-align: center;
+}
+
+.details-box {
+    background: #f8f9fa;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.details-row td {
+    background: #fafafa;
+}
+
+
+.details-box thead th {
+    background: transparent !important;
+    color: #000 !important;   /* خط أسود */
+    font-weight: bold;
+
+    /* الحدود */
+    border: 1px solid #6d757d;     /* إطار خفيف */
+    border-bottom: 2px solid #adb5bd; /* خط أقوى تحت العناوين */
+}
+

@@ -1,0 +1,202 @@
+/* ================= ROOT ================= */
+.price-page {
+  direction: rtl;
+  padding: 16px;
+  background: #f5f7fa;
+  font-family: "Inter", system-ui, sans-serif;
+  color: #111827;
+}
+
+/* ================= LAYOUT ================= */
+.layout {
+  display: grid;
+  grid-template-columns: 360px 1fr; /* صغرنا المؤشرات العالمية */
+  gap: 18px;
+}
+
+@media (max-width: 1100px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================= CARD BASE ================= */
+.card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 14px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  position: relative;
+}
+
+/* ================= GROUP TITLE (INSIDE CARD) ================= */
+.group-title.inside {
+  position: absolute;
+  top: -10px;
+  right: 14px;
+  background: #111827;
+  color: #ffffff;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+/* ================= GLOBAL CARD (SMALLER) ================= */
+.global-card {
+  padding: 12px;
+}
+
+.global-card label {
+  font-size: 11px;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.global-card input {
+  width: 100%;
+  padding: 7px 9px;
+  border-radius: 7px;
+  border: 1px solid #d1d5db;
+  font-size: 12px;
+}
+
+/* ================= FIELD ================= */
+.field {
+  margin-bottom: 10px;
+}
+
+/* ================= GRID ================= */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* ================= METAL TABS ================= */
+.metal-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.metal-tab {
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+  background: #e5e7eb;
+  color: #374151;
+  transition: all .15s ease;
+}
+
+.metal-tab.gold.active {
+  background: linear-gradient(135deg, #facc15, #f59e0b);
+  color: #78350f;
+}
+
+.metal-tab.silver.active {
+  background: linear-gradient(135deg, #e5e7eb, #9ca3af);
+  color: #111827;
+}
+
+/* ================= ITEMS GRID ================= */
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+/* ================= ITEM CARD ================= */
+.item-card {
+  padding-top: 18px;
+}
+
+.item-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.item-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #111827;
+  flex: 1;
+}
+
+/* ================= PRICE INPUT ================= */
+.market-price {
+  width: 80px;
+  padding: 6px 8px;
+  font-size: 12px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  text-align: center;
+}
+
+/* ================= BADGE ================= */
+.badge {
+  margin-top: 6px;
+  font-size: 10.5px;
+  padding: 3px 7px;
+  border-radius: 999px;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.badge.gold {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.badge.silver {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+/* ================= BUTTON ================= */
+.btn-save {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.btn-save:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+}
+
+.btn-save.gold {
+  background: linear-gradient(135deg, #facc15, #f59e0b);
+  color: #78350f;
+}
+
+.btn-save.silver {
+  background: linear-gradient(135deg, #e5e7eb, #9ca3af);
+  color: #111827;
+}
+
+
+.sub-group {
+  margin-bottom: 18px;
+}
+
+.sub-group > .group-title.inside {
+ text-align: center;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  position: relative;
+  top: 0;
+  right: 0;
+  margin-bottom: 10px;
+}
