@@ -12,6 +12,10 @@ frappe.pages['price-entry'].on_page_load = function (wrapper) {
       window.history.back();
   }, 'octicon octicon-arrow-left');
 
+  page.add_action_item(__('الصفحة الرئيسية'), () => {
+    frappe.set_route('/app/benhussein-dashboard');
+  });
+
     page.set_primary_action(__('قائمة الاسعار اليومية'), () => {
         frappe.set_route('List', 'Daily Market Snapshot');
         }, 'octicon octicon-list-unordered');

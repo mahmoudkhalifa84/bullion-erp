@@ -10,6 +10,10 @@ frappe.pages['benhussein-dashboard'].on_page_load = function(wrapper) {
             single_column: true
         });
 
+        page.set_secondary_action(__('الصفحة الرئيسية'), () => {
+            frappe.set_route('/app/benhussein-dashboard');
+        }, 'octicon octicon-home');
+
         page.set_primary_action('إدخال الأسعار', () => {
             frappe.set_route('/app/price-entry');
         });
