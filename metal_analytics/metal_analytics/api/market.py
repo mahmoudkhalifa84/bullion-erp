@@ -3,7 +3,7 @@ from frappe.utils import nowtime
 
 
 # =====================================================
-# SAVE SNAPSHOT
+# SAVE DAILY MARKET SNAPSHOT
 # =====================================================
 @frappe.whitelist()
 def save_market_snapshot(data):
@@ -27,7 +27,7 @@ def save_market_snapshot(data):
     if not data.get("items"):
         frappe.throw("يجب إدخال سعر صنف واحد على الأقل")
 
-    # -------- Create Parent --------
+    # -------- Create Parent Doc --------
     doc = frappe.get_doc({
         "doctype": "Daily Market Snapshot",
 
@@ -79,67 +79,11 @@ def save_market_snapshot(data):
         frappe.throw(str(e))
 
 
-
 # =====================================================
-# GET MARKET ITEMS
-# =====================================================
-# =====================================================
-# GET MARKET ITEMS (MODIFIED)
+# GET MARKET ITEMS (GOLD / SILVER)
 # =====================================================
 @frappe.whitelist()
 def get_market_items(metal_type):
-    """
-    جلب الأصناف حسب شجرة Item Group (ذهب / فضة)
-    بدون أي حقول مخصصة
-    """
-
-    if metal_type not in ("Gold", "Silver"):
-        return []
-
-    # أسماء المجموعات كما هي في Item Group
-    metal_group = "ذهب" if metal_type == "Gold" else "فضة"
-
-    return frappe.get_all(
-        "Item",
-        filters={
-            "disabled": 0,
-            "item_group": ["like", f"%{metal_group}%"]
-        },
-        fields=[
-            "name",
-            "item_name",
-            "item_group"
-        ],
-        order_by="item_group asc, item_name asc"
-    )
-
-    """
-    جلب الأصناف حسب شجرة Item Group (ذهب / فضة) دون الاعتماد على حقول مخصصة
-    """
-
-    if metal_type not in ("Gold", "Silver"):
-        return []
-
-    # اسم مجموعة المعدن في Item Group (تأكد من دقة هذه الأسماء في نظامك)
-    metal_group = "ذهب" if metal_type == "Gold" else "فضة"
-
-    items = frappe.get_all(
-        "Item",
-        filters={
-            "disabled": 0,
-            "item_group": ["like", f"%{metal_group}%"]
-        },
-        fields=[
-            "name",
-            "item_name",
-            "item_group"
-            # تم حذف purity و weight_gram من هنا
-        ],
-        order_by="item_group asc, item_name asc"
-    )
-
-    return items
-
     """
     جلب الأصناف حسب شجرة Item Group (ذهب / فضة)
     """
@@ -150,7 +94,7 @@ def get_market_items(metal_type):
     # اسم مجموعة المعدن في Item Group
     metal_group = "ذهب" if metal_type == "Gold" else "فضة"
 
-    items = frappe.get_all(
+    return frappe.get_all(
         "Item",
         filters={
             "disabled": 0,
@@ -162,28 +106,4 @@ def get_market_items(metal_type):
             "item_group"
         ],
         order_by="item_group asc, item_name asc"
-    )
-
-    return items
-    """
-    جلب الأصناف حسب المعدن (Gold / Silver)
-    """
-
-    if metal_type not in ("Gold", "Silver"):
-        return []
-
-    group_prefix = "ذهب" if metal_type == "Gold" else "فضة"
-
-    return frappe.get_all(
-        "Item",
-        filters={
-            "disabled": 0,
-            "item_group": ["like", f"%{group_prefix}%"]
-        },
-        fields=[
-            "name",
-            "item_name",
-            "item_group"
-        ],
-        order_by="item_group, item_name"
     )

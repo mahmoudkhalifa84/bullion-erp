@@ -7,6 +7,11 @@ frappe.pages['price-entry'].on_page_load = function (wrapper) {
     single_column: true
   });
 
+    // زر رجوع
+  page.set_secondary_action(__('رجوع'), () => {
+      window.history.back();
+  }, 'octicon octicon-arrow-left');
+
     page.set_primary_action(__('قائمة الاسعار اليومية'), () => {
         frappe.set_route('List', 'Daily Market Snapshot');
         }, 'octicon octicon-list-unordered');
