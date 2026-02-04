@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"Lbsn2euGfk\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"benhussein dashboard\",\"col\":3}}]",
+ "content": "[{\"id\":\"Lbsn2euGfk\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"benhussein dashboard\",\"col\":3}},{\"id\":\"9EQRsDouNP\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"m\",\"col\":12}}]",
  "creation": "2026-02-02 18:06:03.149494",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "benhussein",
  "links": [],
- "modified": "2026-02-02 18:50:39.426926",
+ "modified": "2026-02-04 15:06:57.337981",
  "modified_by": "Administrator",
  "module": "metal analytics",
  "name": "benhussein",

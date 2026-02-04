@@ -4,6 +4,7 @@ app_publisher = "benhussein"
 app_description = "metal analytics"
 app_email = "behussein@info.com"
 app_license = "mit"
+home_page = "benhussein"
 
 bench_commands = [
     {

@@ -328,3 +328,116 @@ color:#999;
 font-size:11px;
 margin-right:6px;
 }
+
+.extra-header {
+    background: #f8f9fa;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #e2e8f0;
+    transition: background 0.3s;
+}
+
+.extra-header:hover {
+    background: #edf2f7;
+}
+
+.iframe-collapse-content {
+    width: 100%;
+    height: 750px; /* يمكنك تعديل الارتفاع حسب الحاجة */
+    margin-top: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+}
+
+.dashboard-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.arrow {
+    transition: transform 0.3s ease;
+}
+
+.market-card-placeholder, .inner-card-placeholder {
+    border: 2px dashed #aaa;
+    background-color: #f9f9f9;
+    min-height: 50px;
+    margin: 5px 0;
+}
+
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #3e2723; /* بني غامق */
+    color: #fff;
+}
+
+body.dark-mode .gsaa-dashboard {
+    background-color: #4e342e; /* كرت داكن */
+}
+
+body.dark-mode .market-card {
+    background-color: #5d4037;
+    color: #fff;
+}
+
+body.dark-mode .currency-card,
+body.dark-mode .item-card,
+body.dark-mode .ratio-block {
+    background-color: #6d4c41;
+    color: #fff;
+}
+
+body.dark-mode .card-header,
+body.dark-mode .extra-header {
+    background-color: #4e342e;
+    color: #fff;
+}
+
+body.dark-mode .mini-bar div,
+body.dark-mode .currency-bar-fill,
+body.dark-mode .ratio-indicator {
+    background-color: #a1887f; 
+}
+
+body.dark-mode .arrow,
+body.dark-mode .arrow-up,
+body.dark-mode .arrow-down {
+    color: #ffccbc;
+}
+
+/* ================= GRID ================= */
+.gsaa-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 كروت جنب بعض على الشاشات الكبيرة */
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 1200px) and (min-width: 769px) {
+    .gsaa-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 كرت لكل صف */
+        gap: 20px;
+    }
+}
+
+/* هواتف */
+@media (max-width: 768px) {
+    .gsaa-grid {
+        grid-template-columns: 1fr; /* كرت واحد لكل صف */
+        gap: 16px;
+    }
+}
+
+.market-card, .item-card, .currency-card {
+    width: 100%;
+    box-sizing: border-box;
+}
