@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout the repo
+      # 1️⃣ Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -26,16 +26,21 @@ jobs:
       - name: Deploy to server
         run: |
           ssh -i ~/.ssh/id_ed25519 -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
-            # انتقل للمسار الصحيح
+            # انتقل لمسار bench الصحيح
             cd /home/frappe/frappe-bench
 
-            # تحديث app
+            # تأكد من تحديث repo الخاص بالـ app
             cd apps/metal_analytics
+            git remote remove origin || true
+            git remote add origin git@github.com:mahmoudkhalifa84/bullion-erp.git
+            git fetch origin
             git checkout develop
-            git pull origin develop
+            git reset --hard origin/develop
 
-            # build للـ app مع site
+            # العودة لمسار bench الرئيسي
             cd /home/frappe/frappe-bench
+
+            # build + migrate + clear-cache لكل site (مثال: dev.benhussein.com)
             bench --site dev.benhussein.com build --app metal_analytics
             bench --site dev.benhussein.com migrate
             bench --site dev.benhussein.com clear-cache
