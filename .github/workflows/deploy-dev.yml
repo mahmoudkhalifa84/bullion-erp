@@ -10,9 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      # 1️⃣ Checkout the repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
+      # 2️⃣ Setup SSH
       - name: Setup SSH
         run: |
           mkdir -p ~/.ssh
@@ -20,15 +22,24 @@ jobs:
           chmod 600 ~/.ssh/id_ed25519
           ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
+      # 3️⃣ Deploy commands
       - name: Deploy to server
         run: |
-          ssh -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
-            cd ~/projects/benhussein-bench/apps/metal_analytics
+          ssh -i ~/.ssh/id_ed25519 -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
+            # انتقل للمسار الصحيح
+            cd /home/frappe/frappe-bench
+
+            # تحديث app
+            cd apps/metal_analytics
             git checkout develop
             git pull origin develop
 
-            cd ~/projects/benhussein-bench
-            bench migrate
-            bench clear-cache
+            # build للـ app مع site
+            cd /home/frappe/frappe-bench
+            bench --site dev.benhussein.com build --app metal_analytics
+            bench --site dev.benhussein.com migrate
+            bench --site dev.benhussein.com clear-cache
+
+            # restart الخدمات
             bench restart
           EOF
