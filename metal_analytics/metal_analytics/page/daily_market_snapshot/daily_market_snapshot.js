@@ -1,7 +1,7 @@
 frappe.pages['daily-market-snapshot'].on_page_load = function (wrapper) {
     const page = frappe.ui.make_app_page({
         parent: wrapper,
-        title: 'أسعار السوق',
+        title: 'قائمة أسعار السوق',
         single_column: true
     });
 
